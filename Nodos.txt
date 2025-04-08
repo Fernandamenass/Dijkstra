@@ -1,0 +1,7 @@
+4       # Número de nodos
+4       # Número de aristas
+0 1 8   # Arista de 0 a 1 con peso 5
+0 2 10  # Arista de 0 a 2 con peso 10
+1 2 2   # Arista de 1 a 2 con peso 2
+2 3 9   # Arista de 2 a 3 con peso 1
+0       # Nodo de inicio
