@@ -27,6 +27,10 @@ def leer_nodos_desde_archivo(ruta):
         nodo_inicio = int(archivo.readline().split('#')[0].strip())
         print(f"Nodo de inicio: {nodo_inicio}")
 
+        nodo_destino = int(archivo.readline().split('#')[0].strip())
+        print(f"Nodo destino: {nodo_destino}")
+
+
     return grafo, nodo_inicio
 
 def dijkstra(grafo, inicio):
@@ -46,6 +50,17 @@ def dijkstra(grafo, inicio):
         #Si no hay nodo actual, significa que todos los nodos han sido visitados
         if nodo_actual is None:
             break
+
+        #El grafo.neighbors() viene de la biblioteca de networkx que devuelve una lista de nodos vecinos
+        #Returns an iterator over all neighbors of node n.
+        for vecino in grafo.neighbors(nodo_actual):
+            if vecino not in visitados: 
+                peso = grafo[nodo_actual][vecino]['weight'] #(u,v, peso)
+                nueva_distancia = distancias[nodo_actual] + peso #Actualiza la distancia del path total hasta el momento
+                if nueva_distancia < distancias[vecino]:
+                    distancias[vecino] = nueva_distancia
+
+        visitados.append(nodo_actual) #Agrega el nodo actual a la lista de visitados
 
     return distancias
 

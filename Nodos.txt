@@ -5,6 +5,7 @@
 1 2 2   # Arista de 1 a 2 con peso 2
 2 3 9   # Arista de 2 a 3 con peso 9
 0       # Nodo de inicio
+4   # Nodo destino
 
 
 
