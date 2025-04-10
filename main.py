@@ -27,10 +27,6 @@ def leer_nodos_desde_archivo(ruta):
         nodo_inicio = int(archivo.readline().split('#')[0].strip())
         print(f"Nodo de inicio: {nodo_inicio}")
 
-        nodo_destino = int(archivo.readline().split('#')[0].strip())
-        print(f"Nodo destino: {nodo_destino}")
-
-
     return grafo, nodo_inicio
 
 def dijkstra(grafo, inicio):
