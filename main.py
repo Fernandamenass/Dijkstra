@@ -29,6 +29,26 @@ def leer_nodos_desde_archivo(ruta):
 
     return grafo, nodo_inicio
 
+def dijkstra(grafo, inicio):
+    distancias = {nodo: float('inf') for nodo in grafo.nodes} #Inicializa las distancias a infinito porque todavía no sabemos la distancia real
+    distancias[inicio] = 0 #El nodo de inicio esta con distancia 0
+    visitados = [] #Lista de nodods visitados
+
+    #Checar los nodos que aun no han sido visitados
+    #La función len() en Python devuelve la cantidad de elementos de una lista, diccionario, conjunto, etc.
+    while len(visitados) < len(grafo.nodes):
+        nodo_actual = None
+        for nodo in grafo.nodes:
+            if nodo not in visitados:
+                if nodo_actual is None or distancias[nodo] < distancias[nodo_actual]:
+                    nodo_actual = nodo
+
+        #Si no hay nodo actual, significa que todos los nodos han sido visitados
+        if nodo_actual is None:
+            break
+
+    return distancias
+
 if __name__ == "__main__":
     ruta_archivo = "/Users/alumna/Desktop/7º Semestre/Dijkstra/Nodos.txt" #Pegar la ruta del archivo
     grafo, nodo_inicio = leer_nodos_desde_archivo(ruta_archivo)
