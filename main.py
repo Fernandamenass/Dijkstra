@@ -27,7 +27,10 @@ def leer_nodos_desde_archivo(ruta):
         nodo_inicio = int(archivo.readline().split('#')[0].strip())
         print(f"Nodo de inicio: {nodo_inicio}")
 
-    return grafo, nodo_inicio
+        nodo_final = int(archivo.readline().split('#')[0].strip())
+        print(f"Nodo final: {nodo_final}")
+
+    return grafo, nodo_inicio, nodo_final
 
 def dijkstra(grafo, inicio):
     distancias = {nodo: float('inf') for nodo in grafo.nodes} #Inicializa las distancias a infinito porque todavía no sabemos la distancia real
@@ -62,4 +65,9 @@ def dijkstra(grafo, inicio):
 
 if __name__ == "__main__":
     ruta_archivo = "/Users/alumna/Desktop/7º Semestre/Dijkstra/Nodos.txt" #Pegar la ruta del archivo
-    grafo, nodo_inicio = leer_nodos_desde_archivo(ruta_archivo)
+    grafo, nodo_inicio, nodo_final = leer_nodos_desde_archivo(ruta_archivo)
+
+    distancias = dijkstra(grafo, nodo_inicio)
+
+    print(f"\nDistancia mínima desde el nodo {nodo_inicio} al nodo {nodo_final}: {distancias[nodo_final]}")
+
