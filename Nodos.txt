@@ -1,11 +1,13 @@
-4       # Número de nodos
-4       # Número de aristas
-0 1 8   # Arista de 0 a 1 con peso 8
-0 2 10  # Arista de 0 a 2 con peso 10
-1 2 2   # Arista de 1 a 2 con peso 2
-2 3 9   # Arista de 2 a 3 con peso 9
-0       # Nodo de inicio
-1       # Nodo destino
-
-
-
+7       # Número de nodos
+9       # Número de aristas
+0 1 3    # Arista entre 0 y 1 con peso 3
+0 2 6    # Arista entre 0 y 2 con peso 6
+1 3 2    # Arista entre 1 y 3 con peso 2
+2 3 5    # Arista entre 2 y 3 con peso 5
+2 4 4    # Arista entre 2 y 4 con peso 4
+3 5 7    # Arista entre 3 y 5 con peso 7
+4 5 1    # Arista entre 4 y 5 con peso 1
+5 6 2    # Arista entre 5 y 6 con peso 2
+3 6 8    # Arista entre 3 y 6 con peso 8
+0        # Nodo de inicio
+6        # Nodo destino
